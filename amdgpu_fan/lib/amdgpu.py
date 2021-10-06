@@ -48,7 +48,7 @@ class Card:
     def fan_speed(self):
         try:
             return int(self.read_endpoint('fan1_input'))
-        except KeyError:  # better to return no speed then explode
+        except Exception:  # better to return no speed then explode
             return 0
 
     @property
